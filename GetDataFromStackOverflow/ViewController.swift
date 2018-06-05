@@ -11,9 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var getDataButton: UIButton!
     var dataToNextScreen = [Items]()
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let currentTime = Date()
         let currentTimeInSeconds = Int(currentTime.timeIntervalSince1970 + 10800)
         let calendar = Calendar.current
@@ -28,7 +31,9 @@ class ViewController: UIViewController {
             let decoder = JSONDecoder()
             let stat = try! decoder.decode(Stat.self, from: inputData!)
             self.dataToNextScreen = stat.items
-            //print(stat.items[0].link)
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+            self.getDataButton.isEnabled = true
         }
     }
     
