@@ -1,8 +1,7 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'GetDataFromStackOverflow' do
-    pod 'SwiftyJSON'
+target 'SOwithCD' do
     pod 'Alamofire'
 
 end

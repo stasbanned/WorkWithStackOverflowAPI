@@ -1,6 +1,0 @@
-framework module Pods_GetDataFromStackOverflow {
-  umbrella header "Pods-GetDataFromStackOverflow-umbrella.h"
-
-  export *
-  module * { export * }
-}
